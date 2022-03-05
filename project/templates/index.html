@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <P>
+        现在是登录成功状态,{{ user.username }}
+    </P>
+    <form action="/app2/logout" method="post">
+        {% csrf_token %}
+        <input type="submit" value="点击退出登录">
+    </form>
+</body>
+</html>

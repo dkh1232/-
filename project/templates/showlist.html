@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {text-align: center}
+</style>
+<body>
+<h3>要求三</h3>
+<!--    cellpadding要讲！！！！-->
+    <table cellpadding="5px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>所住公寓</th>
+            <th>管理老师</th>
+        </tr>
+        {% for list1 in list1 %}
+        <tr>
+            <td>{{ list1.student_number }}</td>
+            <td>{{ list1.student_name }}</td>
+            <td>{{ list1.student_flat.flat_name }}</td>
+            <td>{{ list1.student_flat.flat_teacher }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>要求四</h3>
+    <table cellpadding="5px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>数学</th>
+            <th>语文</th>
+            <th>英语</th>
+        </tr>
+        {% for list2 in list2 %}
+        <tr>
+            <td>{{ list2.student_number }}</td>
+            <td>{{ list2.student_name }}</td>
+            <td>{{ list2.student_math }}</td>
+            <td>{{ list2.student_chinese }}</td>
+            <td>{{ list2.student_english }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>要求五</h3>
+    <table cellpadding="5px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>数学</th>
+            <th>语文</th>
+            <th>英语</th>
+            <th>平均成绩</th>
+        </tr>
+        {% for list3 in list3 %}
+        <tr>
+            <td>{{ list3.student_number }}</td>
+            <td>{{ list3.student_name }}</td>
+            <td>{{ list3.student_math }}</td>
+            <td>{{ list3.student_chinese }}</td>
+            <td>{{ list3.student_english }}</td>
+            <td>{% widthratio list3.student_chinese|add:list3.student_math|add:list3.student_english 3 1 %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+</body>
+</html>
